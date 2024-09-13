@@ -7,7 +7,7 @@ const Commitment = props => (
     <Card variant='paper'>
       <Text variant='p'>
         We take our commitment to our users seriously. If you need our help with
-        your project, have questions about how to start making studies and analysis, 
+        your project, have questions about how to start making News and analysis, 
         please do not hesitate to contact us.
       </Text>
     </Card>

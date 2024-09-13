@@ -61,7 +61,7 @@ const BannerVertical = () => (
     In the dynamic world of investments, networking is key to uncovering new opportunities and gaining fresh perspectives.
     </Heading>
     <Text as='ul' variant='small' sx={styles.list}>
-      <li>Collaborate with peers on projects and studies</li>
+      <li>Collaborate with peers on projects and News</li>
       <li>Foster relationships through regular follow-ups and interactions</li>
       <li>Share your insights and opinions</li>
     </Text>

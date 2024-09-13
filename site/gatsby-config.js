@@ -47,7 +47,7 @@ module.exports = {
         slug: '/'
       },
       {
-        name: 'Our Team',
+        name: 'About',
         slug: '/authors'
       },
       {
@@ -70,7 +70,7 @@ module.exports = {
             slug: '/about'
           },
           {
-            name: 'Contact Us',
+            name: 'Contact Me',
             slug: '/contact'
           }
         ]
