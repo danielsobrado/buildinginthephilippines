@@ -3,12 +3,10 @@ import { Card, Text } from 'theme-ui'
 import Section from '@components/Section'
 
 const Commitment = props => (
-  <Section aside title='Our Commitment' {...props}>
+  <Section aside title='About this blog' {...props}>
     <Card variant='paper'>
       <Text variant='p'>
-        We take our commitment to our users seriously. If you need our help with
-        your project, have questions about how to start making News and analysis, 
-        please do not hesitate to contact us.
+      This blog is about the research I'm doing to build in the Philippines. I'm a software engineer, but if I want to build in the Philippines, I need to learn a lot of stuff.
       </Text>
     </Card>
   </Section>
