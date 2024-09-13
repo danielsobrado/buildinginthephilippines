@@ -1,11 +1,9 @@
 import React, { useContext, useState } from 'react';
 import PropTypes from 'prop-types';
 import { Box, Label, Input, Textarea, Button, Message, Spinner } from 'theme-ui';
-import { LanguageContext } from '@helpers-blog/useLanguageContext';
 import emailjs from 'emailjs-com';
 
 const ContactForm = () => {
-  const { language } = useContext(LanguageContext);
   const [submitting, setSubmitting] = useState(false);
   const [success, setSuccess] = useState(null);
 
@@ -15,10 +13,10 @@ const ContactForm = () => {
 
     try {
       const result = await emailjs.sendForm(
-        'service_wmqomka',
-        'template_tg46y1r',
+        'service_fce4e9w',
+        'template_3lb7vq6',
         event.target,
-        '_siqrQw8JSSNqZSdI'
+        'e3ig-UcY4TztSfq-b'
       );
 
       if (result.text === 'OK') {
@@ -47,20 +45,7 @@ const ContactForm = () => {
       subjectLabel: 'Subject',
       messageLabel: 'Your Message',
       submitButton: 'Submit',
-    },
-    es: {
-      successMessage: 'Gracias por contactarnos. ¡Nos pondremos en contacto contigo pronto!',
-      errorMessage: 'Algo salió mal. ¡Por favor, inténtalo de nuevo más tarde!',
-      nameLabel: 'Nombre',
-      companyLabel: 'Nombre de la empresa',
-      emailLabel: 'Correo electrónico',
-      emailPlaceholder: 'correo@ejemplo.com',
-      phoneLabel: 'Número de teléfono',
-      phonePlaceholder: '(xxx) xxx-xxxx',
-      subjectLabel: 'Asunto',
-      messageLabel: 'Tu mensaje',
-      submitButton: 'Enviar',
-    },
+    }
   };
 
   const {
@@ -75,7 +60,7 @@ const ContactForm = () => {
     subjectLabel,
     messageLabel,
     submitButton,
-  } = texts[language];
+  } = texts["en"];
 
   return (
     <form onSubmit={handleSubmit} method='POST'>
