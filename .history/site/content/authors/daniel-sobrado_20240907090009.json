@@ -1,0 +1,21 @@
+{
+  "name": "Daniel Sobrado",
+  "title": "I build ",
+  "description": "Daniel Sobrado is an investor and programmer. He is currently working on projects to leverage AI that to help in the investment process.",
+  "thumbnail": "daniel-sobrado.png",
+  "social": [
+    {
+      "name": "Instagram",
+      "url": "https://www.instagram.com/arcane_paradox_ai/"
+    },
+    {
+      "name": "Twitter",
+      "url": "https://twitter.com/JDanielSob"
+    },
+    {
+      "name": "Website",
+      "url": "https://www.danielsobrado.com"
+    }
+  ],
+  "skills": ["Investing", "AI & Big Data", "Programming"]
+}
