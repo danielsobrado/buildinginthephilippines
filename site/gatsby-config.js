@@ -1,6 +1,10 @@
 module.exports = {
   plugins: [
     {
+      resolve: 'gatsby-plugin-sitemap',
+      options: {}
+    },
+    {
       resolve: '@elegantstack/gatsby-theme-flexiblog-agency',
       options: {
         // Add theme options here. Check documentation for available options.
@@ -14,8 +18,10 @@ module.exports = {
       },
     },
   ],
-  // Customize your site metadata:
   siteMetadata: {
+    // Your site URL without trailing slash
+    siteUrl: "https://www.buildinginthephilippines.com",
+    googleSiteVerification: 'r826BNXppeOrAORh8p5M4GAhQNqyljXbPoe9OVYKuT8',
     //General Site Metadata
     title: 'We talk about construction',
     name: 'Building in the Philippines',
@@ -36,7 +42,7 @@ module.exports = {
       },
       {
         name: 'Instagram',
-        url: 'https://www.instagram.com/arcane_paradox_ai/'
+        url: 'https://www.instagram.com/building-in-the-philippines/'
       }
     ],
 
