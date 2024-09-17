@@ -33,8 +33,8 @@ module.exports = {
     //Site Social Media Links
     social: [
       {
-        name: 'Github',
-        url: 'https://github.com/danielsobrado'
+        name: 'Reddit',
+        url: 'https://www.reddit.com/r/Building_Philippines'
       },
       {
         name: 'Twitter',
