@@ -42,7 +42,7 @@ module.exports = {
       },
       {
         name: 'Instagram',
-        url: 'https://www.instagram.com/building-in-the-philippines/'
+        url: 'https://www.instagram.com/buildinginthephilippines/'
       }
     ],
 
