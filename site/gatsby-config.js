@@ -27,7 +27,7 @@ module.exports = {
     name: 'Building in the Philippines',
     description: 'We talk about construction',
     address: 'Dubai, UAE',
-    email: 'daniel@danielsobrado.com',
+    email: 'admin@buildinginthephilippines.com',
     phone: '',
 
     //Site Social Media Links
