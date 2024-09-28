@@ -3,6 +3,7 @@ import { Container, Box, Flex } from 'theme-ui'
 import { FooterLogo } from './Footer.Logo'
 import { FooterMenu } from './Footer.Menu'
 import { FooterSocial } from './Footer.Social'
+import CookieConsent, { Cookies } from "react-cookie-consent";
 
 const styles = {
   wrapper: {
@@ -25,5 +26,6 @@ export const Footer = () => (
         </Box>
       </Flex>
     </Container>
+    <CookieConsent>This website uses cookies to enhance the user experience.</CookieConsent>
   </Box>
 )
