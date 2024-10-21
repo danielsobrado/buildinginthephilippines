@@ -68,7 +68,7 @@ const BannerVertical = () => (
     <Button
       variant='primary'
       as={Link}
-      to='/'
+      to='/contact/'
       sx={styles.button}
       aria-label='Learn More'
     >
