@@ -63,6 +63,12 @@ module.exports = options => {
       options: {
         checkSupportedExtensions: false
       }
+    },
+    {
+      resolve: 'gatsby-plugin-mailchimp',
+      options: {
+        endpoint: process.env.MAILCHIMP_END_POINT
+      }
     }
   ].filter(Boolean)
 

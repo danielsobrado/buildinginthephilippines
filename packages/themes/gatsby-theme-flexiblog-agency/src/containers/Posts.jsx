@@ -5,6 +5,7 @@ import Divider from '@components/Divider'
 import Seo from '@widgets/Seo'
 import Categories from '@widgets/Categories'
 import NewsletterExpanded from '@widgets/NewsletterExpanded'
+import NewsletterCompact from '@widgets/NewsletterCompact'
 import BannerHorizontal from '@widgets/BannerHorizontal'
 import BannerVertical from '@widgets/BannerVertical'
 import { useBlogCategories } from '@helpers-blog'
@@ -160,7 +161,7 @@ const Posts = ({
               <>
                 <Divider />
                 <Stack effectProps={{ effect: false }}>
-                  <BannerHorizontal />
+                  {/* <BannerHorizontal /> */}
                 </Stack>
               </>
             )}

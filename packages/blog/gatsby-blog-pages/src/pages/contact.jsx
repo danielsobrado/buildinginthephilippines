@@ -15,9 +15,7 @@ const PageContact = props => (
       <Main>
         <PageTitle
           header="Let's Connect"
-          subheader="Interested in hiring us for freelance work?, looking for a cooperative partnership?, 
-          or just wanting to engage in insightful discussion? At InvestSphere, 
-          we're always open for conversation - let's connect!"
+          subheader="Building? Want to share your experiences? Want to write for the blog? Just talking... Write to me!"
         />
         <Divider />
         <ContactForm />

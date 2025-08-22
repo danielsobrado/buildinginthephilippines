@@ -8,7 +8,7 @@ const ContactInfo = () => {
   const { phone, address, email } = useSiteMetadata()
 
   return (
-    <Section aside title='Contact Us'>
+    <Section aside title='Contact Me'>
       <Card variant='paper'>
         <Text variant='p'>Interested in working together?</Text>
         <Text variant='p'>

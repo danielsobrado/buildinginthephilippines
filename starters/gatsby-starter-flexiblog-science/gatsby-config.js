@@ -63,7 +63,7 @@ module.exports = {
             slug: '/about'
           },
           {
-            name: 'Contact Us',
+            name: 'Contact Me',
             slug: '/contact'
           }
         ]

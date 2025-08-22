@@ -58,17 +58,17 @@ const BannerVertical = () => (
       Start Networking
     </Heading>
     <Heading variant='h4' sx={styles.subheading}>
-    In the dynamic world of investments, networking is key to uncovering new opportunities and gaining fresh perspectives.
+    In the ever changing field of investments, networking is essential for finding fresh ideas and identifying potential partners.
     </Heading>
     <Text as='ul' variant='small' sx={styles.list}>
-      <li>Collaborate with peers on projects and studies</li>
-      <li>Foster relationships through regular follow-ups and interactions</li>
-      <li>Share your insights and opinions</li>
+      <li>Work on projects with colleagues</li>
+      <li>build relationships by frequent communication and follow-up</li>
+      <li>Share your ideas and experiences</li>
     </Text>
     <Button
       variant='primary'
       as={Link}
-      to='/'
+      to='/contact/'
       sx={styles.button}
       aria-label='Learn More'
     >
