@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
 
-import os
 import sys
 import logging
 from pathlib import Path
@@ -13,61 +12,87 @@ JPEG_QUALITY = 95
 LOG_FORMAT = '%(asctime)s - %(levelname)s - %(message)s'
 
 def setup_logging():
-    """Configure logging for the application."""
     logging.basicConfig(level=logging.INFO, format=LOG_FORMAT)
     return logging.getLogger(__name__)
 
+def _validate_jpeg(jpg_path: Path, expected_size: tuple[int, int]) -> bool:
+    try:
+        if not jpg_path.exists() or jpg_path.stat().st_size <= 0:
+            return False
+        with Image.open(jpg_path) as im:
+            im.verify()  # structural check
+        with Image.open(jpg_path) as im2:
+            if (im2.format or '').upper() != 'JPEG':
+                return False
+            if im2.size != expected_size:
+                return False
+        return True
+    except Exception:
+        return False
+
 def convert_png_to_jpg(png_path: Path, quality: int = JPEG_QUALITY) -> bool:
-    """Convert a single PNG file to JPG format.
-    
-    Returns True if conversion successful, False otherwise.
-    """
     try:
         with Image.open(png_path) as img:
-            # Convert RGBA to RGB if necessary
             if img.mode in ('RGBA', 'LA', 'P'):
-                rgb_img = Image.new('RGB', img.size, (255, 255, 255))
+                base = Image.new('RGB', img.size, (255, 255, 255))
                 if img.mode == 'P':
                     img = img.convert('RGBA')
-                rgb_img.paste(img, mask=img.split()[-1] if img.mode in ('RGBA', 'LA') else None)
-                img = rgb_img
-            
+                base.paste(img, mask=img.split()[-1] if img.mode in ('RGBA', 'LA') else None)
+                img = base
+            else:
+                img = img.convert('RGB')
+
+            expected_size = img.size
             jpg_path = png_path.with_suffix(OUTPUT_EXTENSION)
-            img.save(jpg_path, 'JPEG', quality=quality, optimize=True)
+            tmp_path = jpg_path.with_suffix('.jpg.tmp')
+            img.save(tmp_path, 'JPEG', quality=quality, optimize=True)
+
+        if _validate_jpeg(tmp_path, expected_size):
+            if jpg_path.exists():
+                jpg_path.unlink()
+            tmp_path.rename(jpg_path)
+            try:
+                png_path.unlink()
+            except Exception as del_err:
+                logging.error("Converted %s but failed to delete original PNG: %s", png_path.name, del_err)
+                return False
             return True
-            
+        else:
+            logging.error("Validation failed for %s; keeping PNG.", png_path.name)
+            try:
+                tmp_path.unlink(missing_ok=True)
+            except Exception:
+                pass
+            return False
+
     except Exception as e:
-        logging.error(f"Failed to convert {png_path}: {e}")
+        logging.error("Failed to convert %s: %s", png_path, e)
         return False
 
 def get_png_files(directory: Path) -> list[Path]:
-    """Get all PNG files in the specified directory."""
-    return [f for f in directory.iterdir() 
-            if f.is_file() and f.suffix.lower() == INPUT_EXTENSION]
+    return [f for f in directory.iterdir() if f.is_file() and f.suffix.lower() == INPUT_EXTENSION]
 
 def main():
-    """Main conversion process."""
     logger = setup_logging()
     current_dir = Path.cwd()
-    
     png_files = get_png_files(current_dir)
-    
+
     if not png_files:
         logger.info("No PNG files found in current directory")
         return
-    
-    logger.info(f"Found {len(png_files)} PNG files to convert")
-    
+
+    logger.info("Found %d PNG files to convert", len(png_files))
     success_count = 0
+
     for png_file in png_files:
-        logger.info(f"Converting {png_file.name}")
+        logger.info("Converting %s", png_file.name)
         if convert_png_to_jpg(png_file):
             success_count += 1
-            logger.info(f"✓ Converted {png_file.name}")
+            logger.info("✓ Converted and deleted %s", png_file.name)
         else:
-            logger.error(f"✗ Failed to convert {png_file.name}")
-    
-    logger.info(f"Conversion complete: {success_count}/{len(png_files)} files converted")
+            logger.error("✗ Failed to convert %s", png_file.name)
+
+    logger.info("Conversion complete: %d/%d files converted", success_count, len(png_files))
 
 if __name__ == "__main__":
     try:
@@ -76,5 +101,5 @@ if __name__ == "__main__":
         logging.info("Conversion interrupted by user")
         sys.exit(1)
     except Exception as e:
-        logging.error(f"Unexpected error: {e}")
+        logging.error("Unexpected error: %s", e)
         sys.exit(1)
