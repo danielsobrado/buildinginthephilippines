@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:aisdecor.en.alibaba.com)",
+      "WebFetch(domain:refor.en.alibaba.com)"
+    ]
+  }
+}
