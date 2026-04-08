@@ -12,7 +12,10 @@
       "Bash(ffmpeg -i NewImages/spc1.png -y site/content/posts/structures/spc-flooring/image.jpg)",
       "Bash(python -c \"import PIL; PIL.Image.open\\('NewImages/spc1.png'\\).convert\\('RGB'\\).save\\('site/content/posts/structures/spc-flooring/image.jpg'\\)\")",
       "Bash(pip install:*)",
-      "Bash(python -c \"from PIL import Image; img = Image.open\\('NewImages/spc1.png'\\).convert\\('RGB'\\); img.save\\('site/content/posts/structures/spc-flooring/image.jpg', 'JPEG', quality=90\\); print\\('done', img.size\\)\")"
+      "Bash(python -c \"from PIL import Image; img = Image.open\\('NewImages/spc1.png'\\).convert\\('RGB'\\); img.save\\('site/content/posts/structures/spc-flooring/image.jpg', 'JPEG', quality=90\\); print\\('done', img.size\\)\")",
+      "Bash(python -c \"from PIL import Image; img = Image.open\\('c:/Development/buildinginthephilippines/NewImages/WPC1.png'\\).convert\\('RGB'\\); img.save\\('c:/Development/buildinginthephilippines/site/content/posts/structures/wpc-wall-panels-china/image.jpg', 'JPEG', quality=90\\); print\\('done', img.size\\)\")",
+      "Bash(git reset:*)",
+      "Bash(git push:*)"
     ]
   }
 }
