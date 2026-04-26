@@ -1,0 +1,138 @@
+---
+title: "Missed Tie Beam Connection After the Pour: Injection, Chip-and-Lap, Dowels, or Steel Plates?"
+category: Structures
+author: Daniel Sobrado
+tags: ['#tie-beam', '#rebar-connection', '#chemical-injection', '#chip-and-lap', '#post-installed-anchors', '#structural-engineer', '#qa-failure', '#nscp-2015', '#aci-318']
+date: 2026-04-27
+thumbnail: image.jpg
+featured: true
+---
+
+## A Missed Tie Beam Rebar Connection. Now What?
+
+Hey, Daniel here!
+
+Today's update is one of those moments that separates a good supervision setup from a bad one. We discovered, after the pour, that a tie beam connection on grid 6 was **missed entirely** at execution. No rebar continuity at a node that needed it.
+
+The contractor's first proposal: "we'll just inject it." That's where I hit the brakes and went deep on what the right fix actually looks like.
+
+![Post-installed rebar dowels being injected with epoxy resin into an existing concrete element](https://github.com/danielsobrado/buildinginthephilippines/blob/main/images/InjectionPlanIssueHeader.jpg?raw=true)
+
+That above is what "just inject it" looks like in practice - dowels drilled into existing concrete, epoxy injected, new bars set. It's a real technique. It's also frequently misapplied.
+
+## How We Spotted It
+
+Same supervision routine as always - daily site documenter, photos and video into the shared messenger group, architect reviewing remotely. The plan markup came back from the contractor essentially saying "we'll inject the rebars of the tie beam since there was confusion at the time about this span":
+
+![Plan markup from the contractor proposing chemical injection on the missed tie beam connection at grid 6](https://github.com/danielsobrado/buildinginthephilippines/blob/main/images/InjectionPlanIssue.jpg?raw=true)
+
+Let's be honest about what that message actually says: a structural rebar connection was skipped during execution because of "confusion." There are no revisions on grid 6 in the plans. This isn't a design issue. It's an **execution and supervision failure** on the contractor's side.
+
+The technical fix matters, but so does the root cause: how was this missed in the first place, and what else from that day might also have been missed?
+
+## The Four Options on the Table
+
+Before deciding anything, I wanted the full menu. Here's what was actually being considered:
+
+### Option 1: Chemical Injection
+
+Drill into the existing tie beam, clean the holes, inject structural epoxy, set new dowels. Fast, cheap, popular with contractors when something gets missed.
+
+### Option 2: Chip and Lap (Expose Existing Rebars)
+
+Chip back the existing tie beam concrete to expose the original rebar, add new L-shaped or U-shaped dowels around the existing bars to form a proper lap splice, then re-pour. This is essentially extending the original connection the way the design intended.
+
+### Option 3: Bolt Anchor Bars
+
+Drill all the way through the width of the tie beam, run threaded bars or bolts with washers and nuts on the other side. Mechanical anchorage, no chemistry dependency.
+
+### Option 4: External Steel Plates / Angles
+
+Bolt structural steel plates or angles across both the existing tie beam and the new element being connected. Effectively a steel splice between the two concrete pieces.
+
+Or, more realistically, **a hybrid solution** combining the appropriate option per location based on criticality.
+
+## Why "Just Inject It" Is Not the Right Default
+
+Here's the structural reality, and this is what I had AI run me through against ACI 318 and NSCP 2015:
+
+### Chip-and-Lap Is What the Original Design Assumed
+
+Lap splices with proper overlap (40-50× bar diameter per ACI 318 / NSCP 2015) are the **baseline code-recognized connection**. No reduction factors, no creep concerns, no installation-quality lottery. It's what the engineer drew when they specified "tie beam continuous through this node."
+
+### Injection Has Real Limitations as a Retrofit Into an Existing Tie Beam
+
+- **Embedment length is constrained** by the existing geometry. You can only drill so deep into a tie beam without hitting the other face.
+- **Anchorage is post-installed**, not lapped through ductile yielding. ACI 318-19 §17.10 applies additional reductions for cyclic seismic loads.
+- **Epoxy creep** under sustained tension and tropical heat is real. Performance degrades with time and temperature.
+- **The QA is a black box.** Hole cleaning happens inside a hole you cannot inspect. You're trusting whoever holds the hose and brush.
+- **It doesn't match the load path** the design assumed. A tie beam's job is to tie footings together and resist lateral spreading under seismic and typhoon load. That's exactly the load case where you want the most robust connection, not the cheapest retrofit.
+
+### When Injection Is Acceptable
+
+I'm not anti-injection. There are real cases where it's the right call:
+
+- Non-critical intermediate locations
+- Where chipping would cause more damage than it fixes
+- Where access is genuinely blocked
+- When done with engineering calculations, proper product selection, **and** pull-out testing on representative samples
+
+## The Honest Comparison Table
+
+| Factor | Chip and Re-Pour | Chemical Injection |
+|--------|------------------|---------------------|
+| Structural capacity | Full, code-baseline | Can reach full *if* installed correctly |
+| Seismic performance | Excellent (ductile lap behavior) | Good, with code reductions |
+| Long-term durability | Excellent | Depends on product + conditions |
+| QA / inspection | Visible, verifiable before pour | Hidden, trust-based |
+| Cost | Higher (labor, formwork, re-pour) | Lower |
+| Time | Longer (cure time again) | Faster |
+| Risk of damaging existing work | Medium-high if careless | Low |
+| Dependency on crew skill | Medium | **Very high** |
+
+## When Chip-and-Lap Is the Wrong Choice
+
+To be fair, chip-and-lap isn't always the answer either:
+
+- **If chipping would damage the existing tie beam** more than it fixes - aggressive breaking near existing rebar can fracture cover, cut stirrups, or seed micro-cracks. Chipping hammer with care, not a jackhammer near critical zones.
+- **If the existing rebar is too short to lap.** You need enough exposed length to achieve 40-50× db. If the original bars terminate exactly at the joint, you can't form a lap - you'd need mechanical couplers or, yes, properly engineered injection.
+- **If access is already blocked** (backfilled trenches, structures above, mechanical conflicts).
+- **If the surrounding concrete is at full strength** and the chipping vibration would damage adjacent elements more than the repair gains.
+
+## What I'd Actually Push For: A Hybrid
+
+Given my site conditions (Coastal area, typhoon and seismic zone, tropical heat that hurts epoxy creep, and a crew whose injection-QA discipline is unproven), this is the path I'm pushing for:
+
+1. **Get the structural engineer on site** to walk grid 6 in person and mark which exact connection points are critical vs non-critical.
+2. **Chip-and-lap at the critical nodes**:
+   - Column-to-tie-beam junctions (highest moment transfer zones)
+   - Corner connections (biaxial loading under typhoon and seismic)
+   - Any location where the tie beam resists significant tension per the structural drawings
+3. **Properly specified chemical injection at non-critical intermediate points**, with:
+   - Engineering calculation showing capacity
+   - Specific product spec (manufacturer, grade, expected creep performance at 35°C+)
+   - Pull-out testing on a sample of installed dowels before committing to the rest
+4. **Document everything**: chipping depth photos, exposed rebar lap measurements, hole cleaning procedures, epoxy batch numbers, pull-out test results.
+5. **Engineer signs off** on the as-built solution and takes responsibility for the connection capacity. In writing.
+
+That last point is the critical one. **Whatever solution gets executed has to be supervised and documented by a licensed structural engineer, and the engineer has to sign off on the new solution and accept responsibility.** Not the contractor. Not me. The engineer.
+
+## The Uncomfortable Conversation
+
+Beyond the technical fix, this kind of finding triggers harder questions for the contractor:
+
+- **Why was this missed in the first place?** A skipped tie beam connection at the foundation stage is a serious QA failure.
+- **Was this isolated, or systemic?** What else from that pour or that week might also have been missed that we haven't discovered yet?
+- **Is the supervision adequate on the contractor's side?** If it took my external setup to catch this, what's their internal QA actually doing?
+
+If a contractor's reflex when something is missed is "don't worry, we'll just inject it" with no engineer involvement, **that itself is the red flag**, not the injection. It tells you how the next problem will be handled. That's a much bigger conversation than which epoxy product to use.
+
+Chip-and-lap is structurally better than injection for tie beam continuity at critical nodes. Injection has its place but as a retrofit it doesn't get you the embedment, ductility, or QA visibility of a proper lap splice.
+
+But the bigger issue on this build right now isn't picking the method. It's making sure the people executing the fix are competent and properly supervised, and that the structural engineer, not the contractor, is the one signing off on what gets done.
+
+Fix the supervision gap first, then pick the method. Otherwise you're just stacking another QA-dependent process on top of a QA failure.
+
+---
+
+For the next post I'll write up exactly what we agreed with the engineer, the lap lengths used (per NSCP 2015 for our bar sizes), and how the actual repair was executed and documented. If you've been through something similar on a Philippine build, I'd love to hear which option you went with and how it held up.
