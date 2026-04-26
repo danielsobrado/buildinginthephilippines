@@ -1,5 +1,6 @@
 ---
 title: Use AI to calculate your BOM
+description: "How to use AI tools to calculate your bill of materials for Philippine construction. Automate material takeoffs and cost estimates."
 category: Other
 author: Daniel Sobrado
 tags: ['#bom', '#cost', '#ai' ]
@@ -8,27 +9,49 @@ thumbnail: image.jpg
 featured: false
 ---
 
-## My Daily Conversations with AI
+## I talk to robots more than people
 
-If you ask me who I talk to most frequently, you might be surprised by my answer. While I have a wife, kids, friends, and work colleagues, I find myself spending a considerable amount of time conversing with AI assistants. [Claude](https://claude.ai/) is my primary go-to, followed by [ChatGPT](https://chatgpt.com/), but the field is rapidly evolving with promising newcomers like [Mistral](https://mistral.ai/) and [Qwen](https://huggingface.co/spaces/Qwen/QwQ-32B-preview) making their mark.
+Okay that's an exaggeration. But not by much.
+I use [Claude](https://claude.ai/) and [ChatGPT](https://chatgpt.com/) constantly.
+Google is dead to me. It's just ads now.
+I use [Perplexity](https://www.perplexity.ai/) for searching.
 
-My relationship with traditional search engines has shifted dramatically. Google has taken a backseat to [Perplexity](https://www.perplexity.ai/), which I now use for most of my online searches. The way I approach problem-solving has transformed entirely, especially in my professional work (I'm a software engineer/architect).
+## Why?
+Because I can show Claude a screenshot of my floor plan and say:
+"Calculate the volume of concrete for these footings if they are 1.2m x 1.2m x 0.4m".
+And it just does it.
 
-Take construction planning, for instance. I can show Claude my blueprints and get quick calculations for various scenarios:
-- Cost comparisons between different footing sizes (4x4 ft vs. 5x5 ft or 6x5 ft)
 ![Footings](https://i.imgur.com/S4tLoK9.jpeg)
-- Estimates for using specific materials like AAC blocks for interior walls
+
+Or ask: "How many AAC blocks for this wall height?"
+
 ![AAC blocks](https://i.imgur.com/JvU4ymb.jpeg)
-- Structural integrity assessments for extreme weather conditions like Category 5 typhoons
 
-However, I've learned to maintain a healthy skepticism. I never rely on a single AI's response. Instead, I cross-reference answers across different platforms, pushing them to explain their reasoning in detail. The fascinating thing about AI is that the more you question, the deeper it goes into its reasoning. Some models, like [O1s](https://openai.com/index/introducing-openai-o1-preview/), can spend up to a minute processing a single question to provide more comprehensive answers.
+## Warning: It lies
+AI lies. A lot.
+It's a "people pleaser".
+If you ask "Is this beam design good?", it will say "Yes! Great job!" because it wants you to be happy.
+You have to bully it.
+Ask: "Critique this design. Tell me why it will fail."
+Then it tells you the truth.
 
-While some AI services require payment, many powerful tools are freely available. For example, QwQ-32B-preview on Hugging Face offers extensive reasoning capabilities at no cost.
+Also, **never trust it with prices.**
+It thinks a bag of cement costs 100 pesos (I wish) or 500 dollars. It has no idea about current Philippine hardware store prices.
+Use it for *volume* (how many bags), not *cost* (how much pesos).
 
-It's important to understand AI's limitations and tendencies. These systems often try to please users (perhaps to encourage subscriptions) by being overly positive about your work. I've learned to specifically request critical feedback, and surprisingly, it works! I'm particularly cautious about pricing information, especially for the Philippine market where online data is often scarce. In these cases, I either provide my own pricing data or use Perplexity to search for current market rates.
+Input your own prices.
+"Assume cement is 230 pesos. Calculate total."
 
-Through regular interaction with AI, I've developed an intuition for what questions will yield reliable answers and which might lead to hallucinations. I've learned to identify the most effective inputs and the tasks where AI truly shines. At this point, I can't imagine working without it – it's become my enhanced cognitive companion.
+## The "O1" trick
+OpenAI has this new model "Starting with O1". It "thinks" before answering.
+It takes like 60 seconds to reply.
+Use that one for math.
+The fast models are bad at math. The slow ones are okay.
+Still check the work though.
 
-However, I want to emphasize that my goal isn't to replace human expertise. Instead, I use AI to deepen my understanding and formulate more informed questions for professionals. While AI significantly accelerates the learning process, it shouldn't be your sole source of information. It's a powerful tool for augmenting human knowledge and decision-making, not replacing it (yet).
-
-I've found this hybrid approach – combining AI assistance with human expertise – to be incredibly effective for learning and investigation. It helps me learn concepts more quickly and engage better with professionals in their respective fields.
+## Summary
+I am not replacing my structural engineer with ChatGPT.
+(Please don't do that).
+But for quick checks? For "sanity checking" my contractor's BOM?
+It's a superpower.
+Just don't trust it blindly.

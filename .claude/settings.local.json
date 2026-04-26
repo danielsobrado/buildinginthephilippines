@@ -1,6 +1,19 @@
 {
   "permissions": {
     "allow": [
+      "Bash(npx sharp-cli:*)",
+      "Bash(magick NewImages/meiju.png site/content/posts/other/where-to-go-china-materials/image.jpg)",
+      "Bash(ffmpeg -i NewImages/meiju.png site/content/posts/other/where-to-go-china-materials/image.jpg -y)",
+      "Bash(python -c \"from PIL import Image; Image.open\\('NewImages/meiju.png'\\).convert\\('RGB'\\).save\\('site/content/posts/other/where-to-go-china-materials/image.jpg'\\)\")",
+      "Bash(python add_descriptions.py)",
+      "Bash(grep -c \"^description:\" site/content/posts/*/index.mdx site/content/posts/*/*/index.mdx)",
+      "Bash(grep -v \":0$\")",
+      "Bash(magick NewImages/spc1.png site/content/posts/structures/spc-flooring/image.jpg)",
+      "Bash(ffmpeg -i NewImages/spc1.png -y site/content/posts/structures/spc-flooring/image.jpg)",
+      "Bash(python -c \"import PIL; PIL.Image.open\\('NewImages/spc1.png'\\).convert\\('RGB'\\).save\\('site/content/posts/structures/spc-flooring/image.jpg'\\)\")",
+      "Bash(pip install:*)",
+      "Bash(python -c \"from PIL import Image; img = Image.open\\('NewImages/spc1.png'\\).convert\\('RGB'\\); img.save\\('site/content/posts/structures/spc-flooring/image.jpg', 'JPEG', quality=90\\); print\\('done', img.size\\)\")",
+      "Bash(python -c \"from PIL import Image; img = Image.open\\('c:/Development/buildinginthephilippines/NewImages/WPC1.png'\\).convert\\('RGB'\\); img.save\\('c:/Development/buildinginthephilippines/site/content/posts/structures/wpc-wall-panels-china/image.jpg', 'JPEG', quality=90\\); print\\('done', img.size\\)\")",
       "Bash(git reset:*)",
       "Bash(git push:*)"
     ]
