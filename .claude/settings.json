@@ -4,7 +4,15 @@
       "WebFetch(domain:aisdecor.en.alibaba.com)",
       "WebFetch(domain:refor.en.alibaba.com)",
       "Bash(mkdir -p c:/Development/workspace/GitHub/buildinginthephilippines/site/content/posts/smart-home/residential-wind-turbines-philippines)",
-      "Bash(cp c:/Development/workspace/GitHub/buildinginthephilippines/images/windTourbineHeader.jpg c:/Development/workspace/GitHub/buildinginthephilippines/site/content/posts/smart-home/residential-wind-turbines-philippines/image.jpg)"
+      "Bash(cp c:/Development/workspace/GitHub/buildinginthephilippines/images/windTourbineHeader.jpg c:/Development/workspace/GitHub/buildinginthephilippines/site/content/posts/smart-home/residential-wind-turbines-philippines/image.jpg)",
+      "Bash(mkdir -p c:/Development/workspace/GitHub/buildinginthephilippines/site/content/posts/structures/wpc-greenzone-co-extruded-decking)",
+      "Bash(cp c:/Development/workspace/GitHub/buildinginthephilippines/images/WPCGreenHeader.jpg c:/Development/workspace/GitHub/buildinginthephilippines/site/content/posts/structures/wpc-greenzone-co-extruded-decking/image.jpg)",
+      "Bash(git add *)",
+      "Bash(git commit *)",
+      "Bash(mkdir -p c:/Development/workspace/GitHub/buildinginthephilippines/site/content/posts/structures/kitchen-cabinet-countertop-materials-philippines)",
+      "Bash(cp c:/Development/workspace/GitHub/buildinginthephilippines/images/KitchenMaterialsHeader.jpg c:/Development/workspace/GitHub/buildinginthephilippines/site/content/posts/structures/kitchen-cabinet-countertop-materials-philippines/image.jpg)",
+      "Bash(mkdir -p c:/Development/workspace/GitHub/buildinginthephilippines/site/content/posts/structures/spc-flooring-coastal-philippines)",
+      "Bash(cp c:/Development/workspace/GitHub/buildinginthephilippines/images/SPCFlooringHeader.jpg c:/Development/workspace/GitHub/buildinginthephilippines/site/content/posts/structures/spc-flooring-coastal-philippines/image.jpg)"
     ]
   }
 }
