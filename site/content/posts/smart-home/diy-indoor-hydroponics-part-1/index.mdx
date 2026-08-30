@@ -45,21 +45,7 @@ The first setup will use **Deep Water Culture, or DWC**.
 
 The basic idea is simple:
 
-```text
-Plant
-  │
-Growing sponge
-  │
-3D-printed net pot
-  │
-Roots
-  │
-  ▼
-Oxygenated nutrient solution
-inside a reservoir
-```
-
-![Deep Water Culture hydroponics showing a plant, growing sponge, 3D-printed net pot, roots, reservoir, air pump and air stones](./deep-water-culture-basics.jpg)
+![Deep Water Culture system showing the plant, growing sponge, 3D-printed net pot, roots, oxygenated nutrient solution, reservoir, air pump, tubing and air stones](./dwc-system-overview.jpg)
 
 An air pump continuously sends air through air stones inside the nutrient solution.
 
@@ -157,22 +143,7 @@ The manufacturer specifies:
 
 For now I can simply power it. Later an ESP32 can control its speed and read the actual RPM:
 
-```text
-Custom application
-        │
-        ▼
-Home Assistant / MQTT
-        │
-        ▼
-      ESP32
-       │  │
- PWM ──┘  └── RPM feedback
-       │
-       ▼
-140 mm circulation fan
-```
-
-![Future ESP32 and Home Assistant automation for a 140 mm PWM circulation fan, including power wiring, PWM control, RPM feedback and a 3D-printed tent-pole clamp](./pwm-fan-automation.jpg)
+![Fan automation architecture connecting a custom application, Home Assistant and MQTT, an ESP32, PWM speed control, RPM feedback and a 140 mm circulation fan](./fan-automation-architecture.jpg)
 
 I will probably 3D-print an adjustable clamp so the fan can attach directly to the grow-tent pole.
 
@@ -222,22 +193,7 @@ I plan to print them in **PETG**, with a wide upper flange, tapered sides, large
 
 Something approximately like this:
 
-```text
-        plant
-          │
-      ┌───┴────┐
-      │ sponge │
-   ┌──┴────────┴──┐
-   │    printed    │
-   │    net pot    │
-    \ │ │ │ │ │ /
-     \│ │ │ │ │/
-        roots
-          │
-          ▼
-       nutrient
-       solution
-```
+![Lettuce plant supported by a growing sponge and 3D-printed net pot with its roots suspended in an aerated Deep Water Culture reservoir](./3d-printed-net-pot-dwc.jpg)
 
 Once I have the final dimensions of the Tactix lid and sponge, I will make the model parametric so I can easily produce different sizes later.
 
@@ -255,26 +211,7 @@ I wanted a proper mains-powered aquarium pump rather than a portable pump meant 
 
 The two outputs let me place an air stone on each side of the 30 L reservoir:
 
-```text
-             SOBO air pump
-               /       \
-              /         \
-       check valve   check valve
-            │             │
-         airline       airline
-            │             │
-       50mm stone     50mm stone
-            │             │
-            ▼             ▼
-     ┌────────────────────────┐
-     │                        │
-     │    30 L reservoir      │
-     │                        │
-     │  bubbles ↑    ↑        │
-     │         roots          │
-     │                        │
-     └────────────────────────┘
-```
+![SOBO dual-outlet air pump connected through two check valves and airlines to two 50 mm air stones inside a 30 L hydroponic reservoir](./dual-outlet-air-pump-layout.jpg)
 
 For the accessories I bought inexpensive 4 mm ID / 6 mm OD airline tubing, two 50 mm air stones and two 4 mm non-return/check valves.
 
@@ -294,21 +231,7 @@ There is a reason hydroponic nutrients commonly come as separate A and B concent
 
 My basic process will be:
 
-```text
-Water
-  ↓
-Part A
-  ↓
-Mix
-  ↓
-Part B
-  ↓
-Mix
-  ↓
-Measure EC
-  ↓
-Measure pH
-```
+![Hydroponic nutrient mixing sequence: water, add Part A, mix, add Part B, mix, then measure EC and pH](./nutrient-mixing-process.jpg)
 
 I already own pH and EC/TDS meters, so I did not need to buy those again.
 
@@ -364,27 +287,9 @@ Matter also gives me a path toward integrating the device into a larger system i
 
 One detail worth knowing: TP-Link's UAE documentation currently notes that energy monitoring may still need to be viewed through the Tapo application rather than being exposed through every Matter platform. I am treating Matter mainly as an interoperability feature, not assuming every measurement will automatically be available through every controller. ([TP-Link][tapo-p110m])
 
-For now:
+The image below shows both the simple arrangement I will use now and the automation path I can add later:
 
-```text
-Wall socket
-     │
-Tapo P110M
-     │
-240 W grow light
-```
-
-Later:
-
-```text
-Custom application
-        │
-Home Assistant / Matter
-        │
-    Tapo P110M
-        │
-     Grow light
-```
+![Grow-light control now using a wall socket and Tapo P110M smart plug, and later through a custom application, Home Assistant, Matter and the same smart plug](./grow-light-smart-plug-control.jpg)
 
 ## The complete V1 architecture
 
@@ -457,47 +362,17 @@ I don't want that. At least not yet.
 
 First I want this:
 
-```text
-Seeds
-  ↓
-Healthy seedlings
-  ↓
-DWC reservoir
-  ↓
-Stable nutrients
-  ↓
-Healthy lettuce
-```
+![Hydroponic growing sequence from seeds to healthy seedlings, a Deep Water Culture reservoir, stable nutrients and healthy lettuce](./hydroponics-growing-sequence.jpg)
 
 Then I can automate a system that I already understand.
 
 The eventual architecture can become much more interesting:
 
-```text
-Temperature
-Humidity
-Water temperature
-Water level
-Leak detection
-pH
-EC
-        │
-        ▼
-      ESP32
-        │
-       MQTT
-        │
-  Home Assistant
-        │
-        ▼
- Custom application
-```
+![Future hydroponics automation architecture with temperature, humidity, water temperature, water level, leak, pH and EC sensors connected through an ESP32, MQTT and Home Assistant to dashboards, notifications and automation rules](./future-hydroponics-automation.jpg)
 
 At that point I can automate fans, lighting, alarms, reservoir monitoring and eventually nutrient dosing.
 
 But I want every new layer to solve a problem I have actually seen.
-
-![Hydroponics plan progressing from seeds to healthy lettuce before adding ESP32, MQTT, Home Assistant and a custom automation application](./learn-first-automate-later.jpg)
 
 ## Next
 
