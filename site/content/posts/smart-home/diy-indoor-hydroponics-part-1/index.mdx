@@ -1,5 +1,5 @@
 ---
-title: 'DIY Indoor Hydroponics, Part 1: Building the Minimum System Before I Automate Everything'
+title: 'DIY Indoor Hydroponics Part 1: Starting Simple Before I Automate It'
 description: 'Building a minimum indoor DWC hydroponic system for lettuce with a grow tent, 240 W light, air pump, 3D-printed net pots, and a path to automation.'
 category: Smart Home
 author: Daniel Sobrado
@@ -23,23 +23,23 @@ featured: false
 
 Hey, Daniel here!
 
-I'm starting a new hydroponics series.
+I'm starting a small indoor hydroponics project.
 
-The long-term goal is not simply to grow a few lettuces indoors. I want to build a **modular indoor hydroponic system that I understand completely**, then gradually add sensors, Home Assistant, ESP32 controllers and eventually my own software.
+Of course, my first instinct was to add an ESP32, sensors, MQTT, Home Assistant and start thinking about my own software before I had grown a single lettuce.
 
-But there is an easy way to make a project like this unnecessarily complicated: automate everything before proving that the basic system actually grows plants.
+That is probably backwards.
 
-So I decided to do the opposite.
+So for the first version I am keeping it simple: **grow lettuce successfully first, automate it later**.
 
-For version one, I am building the **simplest useful hydroponic system I can**, while choosing components that I can reuse when I automate it later.
+I still want the hardware I buy now to be useful later. The long-term plan is a modular system with sensors, Home Assistant, ESP32 controllers and eventually my own application, but first I need to understand the basic hydroponics properly.
 
-This first article covers the planning and the parts I selected. Nothing is fully installed yet. As everything arrives, I will follow up with separate articles covering assembly, 3D printing, testing, nutrients, planting and finally automation.
+This article is mostly about that planning and the parts I selected. Nothing is fully installed yet. As everything arrives, I will cover the assembly, 3D printing, testing, nutrients, planting and automation separately.
 
 ## The basic objective
 
 I want the first version to grow lettuce indoors reliably.
 
-Later I also want to experiment with dwarf tomatoes and other vegetables, but lettuce is a much better crop for learning the system.
+Later I also want to experiment with dwarf tomatoes and other vegetables, but lettuce looks like a much better crop for learning the system.
 
 The first setup will use **Deep Water Culture, or DWC**.
 
@@ -65,36 +65,21 @@ An air pump continuously sends air through air stones inside the nutrient soluti
 
 Oklahoma State University describes water culture as one of the simplest active hydroponic systems: the plants sit above the nutrient solution while an air pump and air stone supply oxygen to the roots. ([Oklahoma State University Extension][hydroponics])
 
-That simplicity is exactly why I chose it for version one.
+For a first system, that is exactly what I want.
 
 ## Why I did not buy a complete smart grow kit
 
-I originally looked at complete grow-tent packages containing:
-
-- tent
-- LED light
-- extraction fan
-- circulation fan
-- carbon filter
-- controller
-- sensors
-- phone application
+I originally looked at complete grow-tent packages with the tent, LED light, fans, carbon filter, sensors, controller and phone application.
 
 They are convenient, but I didn't really want the proprietary controller.
 
 If I am eventually going to build my own automation, paying extra for somebody else's closed smart ecosystem makes little sense.
 
-Instead, my approach became:
+My rule became simple: buy the physical components that are difficult or pointless to manufacture myself, then build the custom parts and intelligence myself.
 
-> Buy the physical components that are difficult or pointless to manufacture myself, and build the custom parts and intelligence myself.
+I can replace the controller without replacing the light, change the fan without changing the sensors, and add Home Assistant without depending on one grow-tent manufacturer.
 
-That gives me much more freedom later.
-
-I can replace the controller without replacing the light. I can replace the fan without replacing the sensors. I can add Home Assistant without depending on a particular grow-tent manufacturer.
-
-And when I eventually build my own application, I will already know exactly how everything works.
-
-## Step 1: choosing the tent size
+## Choosing the tent
 
 This took more thought than expected.
 
@@ -104,21 +89,9 @@ I first found a very small tent around:
 42 × 42 × 121 cm
 ```
 
-It was cheap, but it was simply too small.
+It was cheap, but simply too small. Once the reservoir, plants, distance to the LED, the light itself, fans, tubing and cables are inside, 121 cm disappears very quickly.
 
-Once you account for:
-
-- the hydroponic reservoir
-- plant height
-- distance between the plants and the LED
-- the LED itself
-- fans
-- tubing
-- cables
-
-121 cm disappears very quickly.
-
-I then looked at an:
+I then looked at:
 
 ```text
 82 × 82 × 181 cm
@@ -126,23 +99,21 @@ I then looked at an:
 
 That would work, especially for lettuce, but I wanted something I would not immediately outgrow.
 
-The size I eventually settled around is the standard **3 × 3 foot class**, roughly:
+The size I eventually settled on is the standard **3 × 3 foot class**, roughly:
 
 ```text
 91 × 91 × 200 cm
 ```
 
-That is compact enough to fit comfortably inside a room while giving approximately **0.83 m² of floor area**.
-
-It also gives me enough height to experiment with different reservoir and lighting arrangements.
+It is still compact enough for a room and gives approximately **0.83 m² of floor area**, with enough height to try different reservoir and lighting arrangements.
 
 For this project, I think the 3×3 format is the sweet spot.
 
-## Step 2: the grow light
+## The grow light
 
 This is where I was willing to spend more money.
 
-There are hundreds of very cheap grow lights advertised as:
+There are hundreds of cheap grow lights advertised as:
 
 ```text
 1000W
@@ -150,9 +121,7 @@ There are hundreds of very cheap grow lights advertised as:
 3000W
 ```
 
-but the marketing number often has little relationship with actual electrical consumption.
-
-I wanted the actual power specification.
+but those marketing numbers often have little relationship with the actual electrical consumption. I wanted the real power specification.
 
 After comparing several AliExpress and Amazon options, I chose a:
 
@@ -160,35 +129,21 @@ After comparing several AliExpress and Amazon options, I chose a:
 
 The version I selected uses a four-bar design with a quoted **240 W actual power**, dimming and 1,056 Samsung LEDs.
 
-I considered cheaper AliExpress lights using Samsung LM301-series LEDs and Mean Well drivers. Technically, some of them looked excellent.
+I considered cheaper AliExpress lights using Samsung LM301-series LEDs and Mean Well drivers. Technically, some looked excellent. The problem was price and purchase risk.
 
-The problem was price and purchase risk.
+Once I selected the correct 240 W configuration and added shipping, some AliExpress options were almost as expensive as, or more expensive than, the Amazon alternatives. For this component I preferred Amazon's easier returns and customer service.
 
-Once the correct 240 W configuration and shipping were selected, some of those AliExpress options were almost as expensive as, or more expensive than, the Amazon alternatives.
+The light is more powerful than I need for young lettuce, but it is dimmable. I would rather run one useful light at lower power now than replace an undersized light when I start growing larger plants.
 
-For this component, I preferred Amazon's easier returns and customer service.
+## A computer fan instead of a grow fan
 
-The light is deliberately more powerful than I need for young lettuce.
-
-That is fine because it is dimmable.
-
-I would rather buy one useful light now and initially run it at lower power than replace an undersized light when I start growing larger plants.
-
-## Step 3: circulation inside the tent
-
-I initially considered a normal clip-on grow fan.
-
-Then I realized that I would eventually want software control of the fan speed.
-
-That changed the requirement completely.
+I initially considered a normal clip-on grow fan, then realized I would eventually want software control of the fan speed.
 
 Instead, I bought a:
 
 ### Thermalright TL-C14C-S 140 mm PWM fan
 
-This is technically a computer cooling fan rather than a grow-tent fan.
-
-That sounds strange, but it has several advantages for this project.
+It is actually a PC cooling fan, not a grow-tent fan. I picked it mainly because it gives me PWM speed control and RPM feedback.
 
 The manufacturer specifies:
 
@@ -200,11 +155,7 @@ The manufacturer specifies:
 - tachometer/RPM feedback
 - maximum rated noise of 26.4 dBA. ([Thermalright][thermalright])
 
-The important part is the **4-pin PWM interface**.
-
-Today, I can simply power the fan.
-
-Later an ESP32 can control its speed and read its actual RPM:
+For now I can simply power it. Later an ESP32 can control its speed and read the actual RPM:
 
 ```text
 Custom application
@@ -225,11 +176,9 @@ Home Assistant / MQTT
 
 I will probably 3D-print an adjustable clamp so the fan can attach directly to the grow-tent pole.
 
-## Step 4: powering the circulation fan
+## Powering the fan
 
-The Thermalright fan needs 12 V DC.
-
-I therefore selected a simple:
+The Thermalright fan needs 12 V DC, so I selected a simple:
 
 ```text
 12 V
@@ -239,36 +188,23 @@ UK/UAE Type-G plug
 5.5 × 2.1 mm barrel connector
 ```
 
-Two amps is far more than the single fan requires, but it gives me useful spare capacity for later control electronics.
+Two amps is far more than one fan requires, but it leaves spare capacity for later control electronics.
 
-I also bought:
+I also bought a 4-pin PWM extension cable and a 5.5 × 2.1 mm female barrel-to-screw-terminal adapter.
 
-- a 4-pin PWM extension cable
-- a 5.5 × 2.1 mm female barrel-to-screw-terminal adapter
+I don't want to cut the original fan cable. I can modify the cheap extension cable instead.
 
-The important idea here is that I do **not** want to cut the original fan cable.
-
-I can modify the cheap extension cable instead.
-
-## Step 5: using a storage box as the hydroponic reservoir
+## The reservoir
 
 I considered 3D printing the complete reservoir.
 
-Technically, that is possible.
-
-Practically, it would be a poor use of a 3D printer.
-
-A 30 L tank contains roughly 30 kg of water before adding the lid, plants and equipment. A commercially molded PP or HDPE container is cheaper, stronger, smoother and easier to clean than a large FDM print.
+I could do it, but honestly it makes little sense. A 30 L tank contains roughly 30 kg of water before adding the lid, plants and equipment. A commercially molded PP or HDPE container is cheaper, stronger, smoother and easier to clean than a large FDM print.
 
 So I chose a:
 
 ### Tactix 30 L heavy-duty storage box
 
-The box becomes the DWC reservoir.
-
-The clever parts will be printed around it instead.
-
-That gives me the best combination:
+The box becomes the DWC reservoir. I'll print the parts that actually benefit from being custom around it instead.
 
 ```text
 Commercial molded reservoir
@@ -276,20 +212,13 @@ Commercial molded reservoir
      Custom printed parts
 ```
 
-## Step 6: 3D printing the net pots
+## Printing my own net pots
 
-This is exactly the kind of component that does make sense to print.
+This is a part where the 3D printer actually makes sense.
 
 Instead of buying standard hydroponic net pots, I will design them around the seed-starting sponges I already have.
 
-I plan to print them in **PETG**, with:
-
-- a wide upper flange
-- tapered sides
-- large root openings
-- an open bottom
-- an internal support for the sponge
-- no printing supports
+I plan to print them in **PETG**, with a wide upper flange, tapered sides, large root openings, an open bottom and an internal support for the sponge. I also want the model to print without supports.
 
 Something approximately like this:
 
@@ -312,21 +241,19 @@ Something approximately like this:
 
 Once I have the final dimensions of the Tactix lid and sponge, I will make the model parametric so I can easily produce different sizes later.
 
-That will be one of the next articles.
+That should become one of the next articles.
 
-## Step 7: oxygenating the reservoir
+## Air pump and air stones
 
 The roots in DWC need oxygen.
 
-After rejecting several very small USB aquarium pumps, I selected a:
+After rejecting several tiny USB aquarium pumps, I selected a:
 
 ### SOBO SB-8806 dual-outlet air pump
 
-I specifically wanted a proper mains-powered aquarium pump rather than a tiny portable pump designed for transporting fish.
+I wanted a proper mains-powered aquarium pump rather than a portable pump meant for transporting fish.
 
-The pump has two outputs, which lets me place an air stone on each side of the 30 L reservoir.
-
-The complete air system will be:
+The two outputs let me place an air stone on each side of the 30 L reservoir:
 
 ```text
              SOBO air pump
@@ -349,19 +276,13 @@ The complete air system will be:
      └────────────────────────┘
 ```
 
-For the accessories I bought inexpensive aquarium parts:
+For the accessories I bought inexpensive 4 mm ID / 6 mm OD airline tubing, two 50 mm air stones and two 4 mm non-return/check valves.
 
-- 4 mm ID / 6 mm OD airline tubing
-- two 50 mm air stones
-- two 4 mm non-return/check valves
+The check valves reduce the risk of water flowing backwards through the airline toward the pump. The pump itself will normally run continuously.
 
-The check valves are there to reduce the risk of water flowing backwards through the airline toward the pump.
+## Nutrients
 
-The pump itself will normally run continuously.
-
-## Step 8: nutrients
-
-For the first grow, I am keeping the nutrient side equally simple.
+For the first grow, I am keeping the nutrient side simple too.
 
 I chose:
 
@@ -369,9 +290,9 @@ I chose:
 
 It is a two-part nutrient system intended for leafy vegetables and other hydroponic crops.
 
-There is an important reason hydroponic nutrients commonly come as separate A and B concentrates: concentrated mineral components should not simply be mixed directly together before dilution because some compounds can precipitate.
+There is a reason hydroponic nutrients commonly come as separate A and B concentrates: concentrated mineral components should not simply be mixed directly together before dilution because some compounds can precipitate.
 
-My basic process will therefore be:
+My basic process will be:
 
 ```text
 Water
@@ -391,11 +312,11 @@ Measure pH
 
 I already own pH and EC/TDS meters, so I did not need to buy those again.
 
-EC is particularly useful because electrical conductivity gives us an indication of the concentration of dissolved salts in the nutrient solution. Managing both EC and pH is a fundamental part of hydroponic nutrient management. ([Oklahoma State University Extension][ec-ph-guide])
+Electrical conductivity gives an indication of the concentration of dissolved salts in the nutrient solution. Managing both EC and pH is a fundamental part of hydroponic nutrient management. ([Oklahoma State University Extension][ec-ph-guide])
 
 I will cover actual nutrient concentrations in the grow article rather than guessing before I have measured my water and the mixed solution.
 
-## Step 9: calibrating the pH meter
+## Calibrating the pH meter
 
 A cheap digital meter is only useful if it is reasonably calibrated.
 
@@ -407,25 +328,19 @@ pH 6.86
 pH 9.18
 ```
 
-For the range we are interested in, 4.01 and 6.86 are the most relevant calibration points.
+For the range I am interested in, 4.01 and 6.86 are the most relevant calibration points.
 
 I also bought a small hydroponic:
 
 ### Garden Genie pH Up + pH Down kit
 
-My plan is not to chase a perfect decimal every few minutes.
-
-I want to measure the water, add the nutrients, let everything mix, measure again and make small corrections when required.
+I am not planning to chase a perfect decimal every few minutes. I want to measure the water, add the nutrients, let everything mix, measure again and make small corrections when required.
 
 Hydroponic pH matters because it affects nutrient availability. Oklahoma State University's hydroponics guidance recommends maintaining nutrient solutions in a mildly acidic range and monitoring both pH and EC rather than treating nutrient concentration as guesswork. ([Oklahoma State University Extension][ec-ph-guide])
 
-## Step 10: controlling the light
+## Controlling the light
 
-I do not want to manually turn the grow light on and off every day.
-
-A cheap mechanical timer would solve that.
-
-But I also want this hardware to remain useful when I start automating the system.
+I do not want to manually turn the grow light on and off every day. A cheap mechanical timer would solve that, but I also want the hardware to remain useful when I start automating the system.
 
 So I chose a:
 
@@ -445,9 +360,9 @@ The P110M supports:
 
 The light draws nowhere near the plug's maximum rating.
 
-More importantly, Matter gives me a better path toward integrating the device into a larger system instead of locking the grow light permanently into one manufacturer's application.
+Matter also gives me a path toward integrating the device into a larger system instead of locking the grow light permanently into one manufacturer's application.
 
-One detail worth knowing: TP-Link's UAE documentation currently notes that energy monitoring may still need to be viewed through the Tapo application rather than being exposed through every Matter platform. I am therefore treating Matter mainly as an interoperability feature, not assuming every measurement will automatically be available through every controller. ([TP-Link][tapo-p110m])
+One detail worth knowing: TP-Link's UAE documentation currently notes that energy monitoring may still need to be viewed through the Tapo application rather than being exposed through every Matter platform. I am treating Matter mainly as an interoperability feature, not assuming every measurement will automatically be available through every controller. ([TP-Link][tapo-p110m])
 
 For now:
 
@@ -512,9 +427,7 @@ That is intentional.
 
 ## Things I deliberately did not buy
 
-It was tempting to keep adding components.
-
-I stopped.
+It was tempting to keep adding components, so I stopped.
 
 Version one does **not** need:
 
@@ -532,21 +445,15 @@ Version one does **not** need:
 
 I also haven't committed to an inline exhaust fan yet.
 
-The 140 mm fan circulates air inside the tent, but it does not replace warm tent air with room air.
+The 140 mm fan circulates air inside the tent, but it does not replace warm tent air with room air. I want to install the 240 W LED first and measure what actually happens.
 
-I want to install the 240 W LED first and measure what actually happens.
-
-If the tent becomes too hot or humid, I will add a proper exhaust fan.
-
-That is much better than buying equipment before knowing whether I need it.
+If the tent becomes too hot or humid, I will add a proper exhaust fan. I would rather find that out from the real setup than buy more equipment now because I think I might need it.
 
 ## Why I am building it this way
 
 This project could easily become an electronics project disguised as gardening.
 
-I don't want that.
-
-At least not yet.
+I don't want that. At least not yet.
 
 First I want this:
 
@@ -588,39 +495,21 @@ EC
 
 At that point I can automate fans, lighting, alarms, reservoir monitoring and eventually nutrient dosing.
 
-But every new layer will have a reason to exist.
+But I want every new layer to solve a problem I have actually seen.
 
 ![Hydroponics plan progressing from seeds to healthy lettuce before adding ESP32, MQTT, Home Assistant and a custom automation application](./learn-first-automate-later.jpg)
 
-## What happens next
+## Next
 
-Now I wait for the components to arrive.
+Now I actually need the rest of the components to arrive.
 
-The next stage will be much more practical.
+The next article should be much more practical because I can start putting everything together: tent, light, reservoir, air pump, fan and the first 3D-printed parts.
 
-I will:
+I have already started the first lettuce seeds, so hopefully by then I also have something green ready for the system.
 
-1. assemble the tent;
-2. inspect and test the grow light;
-3. mount the circulation fan;
-4. 3D-print the tent-pole fan bracket;
-5. design and print the hydroponic net pots;
-6. modify the Tactix reservoir lid;
-7. install the SOBO pump, airlines, check valves and air stones;
-8. fill the system with plain water and check for problems;
-9. calibrate the pH and EC meters;
-10. test the smart plug and lighting schedule;
-11. mix the first nutrient solution;
-12. transplant the lettuce seedlings;
-13. measure temperature and humidity before deciding whether I need additional extraction.
+I am particularly interested in seeing how much of the hydroponic setup I can eventually **3D print and automate without turning a simple garden into an unnecessarily complicated engineering project**.
 
-That will be the next part of this series.
-
-I am particularly interested in seeing how much of the hydroponic system can eventually be **3D printed and automated without making it unnecessarily complicated**.
-
-For now, the shopping phase is finished.
-
-Next comes the fun part: finding out whether all these individually sensible decisions actually work together.
+For now, the shopping phase is finished. Next comes the useful part: finding out whether all these individually sensible decisions actually work together.
 
 ## Sources
 
