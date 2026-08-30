@@ -1,5 +1,5 @@
 ---
-title: 'DIY Indoor Hydroponics Part 1: Starting Simple Before I Automate It'
+title: 'DIY Indoor Hydroponics Part 2: Starting Simple Before I Automate It'
 description: 'Building a minimum indoor DWC hydroponic system for lettuce with a grow tent, 240 W light, air pump, 3D-printed net pots, and a path to automation.'
 category: Smart Home
 author: Daniel Sobrado
@@ -23,7 +23,9 @@ featured: false
 
 Hey, Daniel here!
 
-I'm starting a small indoor hydroponics project.
+In [Part 1](/diy-indoor-hydroponics-part-1-bibb-lettuce-seeds), I started the first Bibb lettuce seeds. This article steps back and explains the minimum system I am building around them.
+
+I'm building a small indoor hydroponics project.
 
 Of course, my first instinct was to add an ESP32, sensors, MQTT, Home Assistant and start thinking about my own software before I had grown a single lettuce.
 
@@ -33,7 +35,7 @@ So for the first version I am keeping it simple: **grow lettuce successfully fir
 
 I still want the hardware I buy now to be useful later. The long-term plan is a modular system with sensors, Home Assistant, ESP32 controllers and eventually my own application, but first I need to understand the basic hydroponics properly.
 
-This article is mostly about that planning and the parts I selected. Nothing is fully installed yet. As everything arrives, I will cover the assembly, 3D printing, testing, nutrients, planting and automation separately.
+This article is mostly about that planning and the parts I selected. The main DWC system is not fully installed yet. As everything arrives, I will cover the assembly, 3D printing, testing, nutrients, planting and automation separately.
 
 ## The basic objective
 
@@ -295,30 +297,7 @@ The image below shows both the simple arrangement I will use now and the automat
 
 This is what the first version should look like:
 
-```text
-                 3 × 3 GROW TENT
-
-             ┌─────────────────────┐
-             │                     │
-             │    240W LED         │
-             │       │             │
-             │   Tapo P110M        │
-             │                     │
-             │  140mm PWM fan →    │
-             │                     │
-             │   🌱  🌱  🌱  🌱    │
-             │    │   │   │   │    │
-             │  3D-printed pots    │
-             │                     │
-             │ ┌─────────────────┐ │
-             │ │ 30L reservoir   │ │
-             │ │ ↑↑         ↑↑   │ │
-             │ │ air stones      │ │
-             │ └─────────────────┘ │
-             └───────────┬─────────┘
-                         │
-                  SOBO air pump
-```
+![Complete V1 indoor hydroponics architecture with a 3 × 3 grow tent, Tapo-controlled 240 W LED grow light, 140 mm circulation fan, four 3D-printed net pots, 30 L reservoir, two air stones and a SOBO air pump](./complete-v1-architecture.jpg)
 
 There are no automated nutrient pumps.
 
