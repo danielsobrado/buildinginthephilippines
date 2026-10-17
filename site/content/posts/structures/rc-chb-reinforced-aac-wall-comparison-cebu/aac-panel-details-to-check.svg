@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="700" viewBox="0 0 1200 700" role="img" aria-labelledby="t d"><title id="t">Reinforced AAC exterior wall connection checks</title><desc id="d">Conceptual reinforced AAC panel between an RC beam and columns with inspection topics: structural anchor, steel protection, movement joints, exterior waterproofing, window detailing, and wind pressure and suction. Not an approved shop drawing.</desc><rect width="1200" height="700" fill="#f7f8fa"/><rect x="38" y="27" width="1124" height="630" rx="19" fill="#fff" stroke="#dce2e8" stroke-width="2"/>
+<text x="75" y="86" font-family="Arial,sans-serif" font-weight="700" font-size="35" fill="#172336">AAC panel: details we still need to approve</text><text x="75" y="121" font-family="Arial,sans-serif" font-size="19" fill="#637184">Concept illustration only. Not a connection specification or structural drawing.</text>
+<rect x="86" y="175" width="120" height="381" fill="#687381"/><rect x="555" y="175" width="82" height="381" fill="#687381"/><rect x="86" y="158" width="551" height="55" fill="#687381"/><rect x="86" y="541" width="551" height="41" fill="#687381"/>
+<rect x="215" y="222" width="325" height="309" rx="3" fill="#dcecf0" stroke="#a6bbc3" stroke-width="3"/>
+<g stroke="#7295a3" stroke-width="9" stroke-linecap="round"><line x1="266" y1="247" x2="266" y2="505"/><line x1="337" y1="247" x2="337" y2="505"/><line x1="408" y1="247" x2="408" y2="505"/><line x1="479" y1="247" x2="479" y2="505"/></g>
+<rect x="205" y="222" width="12" height="309" fill="#57a9ae"/><rect x="539" y="222" width="10" height="309" fill="#57a9ae"/>
+<g stroke="#223e59" stroke-width="8"><line x1="179" y1="276" x2="248" y2="276"/><line x1="518" y1="470" x2="587" y2="470"/></g>
+<g fill="#f4bb57" stroke="#af7e20" stroke-width="2"><circle cx="189" cy="276" r="10"/><circle cx="578" cy="470" r="10"/></g>
+<g font-family="Arial,sans-serif"><text x="135" y="616" fill="#425269" font-size="17">RC frame</text><text x="305" y="616" fill="#425269" font-size="17">Reinforced AAC infill</text></g>
+<g font-family="Arial,sans-serif" fill="#172336"><text x="701" y="211" font-size="27" font-weight="700">Still to verify</text>
+<circle cx="714" cy="268" r="9" fill="#d1a245"/><text x="738" y="275" font-size="22">Anchors into RC and load path</text>
+<circle cx="714" cy="334" r="9" fill="#d1a245"/><text x="738" y="341" font-size="22">Positive pressure and suction</text>
+<circle cx="714" cy="400" r="9" fill="#d1a245"/><text x="738" y="407" font-size="22">Movement and sealant joints</text>
+<circle cx="714" cy="466" r="9" fill="#d1a245"/><text x="738" y="473" font-size="22">Steel corrosion protection</text>
+<circle cx="714" cy="532" r="9" fill="#d1a245"/><text x="738" y="539" font-size="22">Render, flashing and waterproofing</text></g>
+<text x="76" y="650" font-family="Arial,sans-serif" font-size="15" fill="#7b8895">Panel reinforcement is schematic. Final locations, steel details and anchors must follow approved supplier and engineer drawings.</text>
+</svg>

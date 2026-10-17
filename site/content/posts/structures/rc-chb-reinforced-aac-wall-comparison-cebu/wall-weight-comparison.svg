@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="640" viewBox="0 0 1200 640" role="img" aria-labelledby="t d">
+<title id="t">Approximate weight of 150 mm wall systems</title><desc id="d">RC 360 kg per square metre, CHB 185 kg per square metre, reinforced AAC 120 kg per square metre. For 142.56 square metres, RC totals 51.3 tonnes and AAC 17.1 tonnes, 34.2 tonnes lighter.</desc>
+<rect width="1200" height="640" fill="#f7f8fa"/><rect x="38" y="32" width="1124" height="575" rx="19" fill="#fff" stroke="#dce2e8" stroke-width="2"/>
+<text x="75" y="95" font-family="Arial,sans-serif" font-size="35" font-weight="700" fill="#172336">What 150 mm of wall material weighs</text><text x="76" y="131" font-family="Arial,sans-serif" font-size="19" fill="#687487">Our Cebu house / preliminary comparison / kg per m²</text>
+<text x="76" y="205" font-family="Arial,sans-serif" font-size="24" font-weight="700" fill="#243047">Reinforced concrete</text><rect x="370" y="168" width="687" height="53" rx="8" fill="#515e6e"/><text x="1073" y="203" font-family="Arial,sans-serif" font-size="26" font-weight="700" fill="#172336">360</text>
+<text x="76" y="300" font-family="Arial,sans-serif" font-size="24" font-weight="700" fill="#243047">Reinforced CHB*</text><rect x="370" y="263" width="353" height="53" rx="8" fill="#8294a9"/><text x="739" y="298" font-family="Arial,sans-serif" font-size="26" font-weight="700" fill="#172336">185</text>
+<text x="76" y="395" font-family="Arial,sans-serif" font-size="24" font-weight="700" fill="#243047">Reinforced AAC</text><rect x="370" y="358" width="229" height="53" rx="8" fill="#49a1bb"/><text x="615" y="393" font-family="Arial,sans-serif" font-size="26" font-weight="700" fill="#172336">120</text>
+<rect x="76" y="444" width="1045" height="104" rx="12" fill="#e9f5f8"/>
+<text x="103" y="486" font-family="Arial,sans-serif" font-size="21" font-weight="700" fill="#172336">142.56 m² of exterior walls</text>
+<text x="103" y="520" font-family="Arial,sans-serif" font-size="19" fill="#25364a">RC: 51.3 tonnes   |   AAC: 17.1 tonnes</text>
+<text x="773" y="496" font-family="Arial,sans-serif" font-size="31" font-weight="700" fill="#166c83">34.2 tonnes less</text>
+<text x="828" y="526" font-family="Arial,sans-serif" font-size="18" fill="#2f7184">about 67% less wall material</text>
+<text x="76" y="579" font-family="Arial,sans-serif" font-size="16" fill="#778393">*CHB varies with grout, reinforcement and finishes. All values are preliminary; RC and AAC estimates exclude finishes.</text>
+</svg>
