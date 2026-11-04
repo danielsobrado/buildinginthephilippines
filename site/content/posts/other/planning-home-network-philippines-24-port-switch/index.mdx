@@ -1,6 +1,6 @@
 ---
-title: "Planning My Home Network in the Philippines: Do I Really Need a 48-Port Switch?"
-description: "How I went from planning a 48-port switch to a smaller network for my Cebu house: 22 CAT6 runs, separate PoE, a shallow cabinet and a possible DIY rack."
+title: "Planning My Home Network in the Philippines: 24 or 48 Ports, PoE and Rack Options"
+description: "How I am comparing 24-port, 48-port and multiple-switch networks, vertical racks, 3D printing and possible cabinet locations for our Cebu house."
 category: Other
 author: Daniel Sobrado
 tags: ['#home-network', '#cat6', '#poe', '#smart-home', '#home-assistant', '#3d-printing', '#network-cabinet', '#cebu', '#philippines']
@@ -9,7 +9,7 @@ thumbnail: image.webp
 featured: false
 ---
 
-# Planning My Home Network in the Philippines: Do I Really Need a 48-Port Switch?
+# Planning My Home Network in the Philippines: 24 or 48 Ports, PoE and Rack Options
 
 I started looking for a network cabinet for our house in Liloan, Cebu. I was expecting a fairly simple decision: choose a 19-inch rack, put a 48-port switch inside, and leave enough space for the router and the rest of the equipment.
 
@@ -17,7 +17,7 @@ Then my architect asked where we were actually going to put it.
 
 That question made me review the whole plan. The house is still under construction, so I can change cable routes and equipment locations before the ceilings and walls are finished. I would rather solve this now than end up with an oversized cabinet in a bad location.
 
-At the moment, I am leaning towards **one compact 24-port managed Gigabit switch, a separate 8-port PoE switch, and a shallow wall-mounted cabinet**. Nothing has been installed yet. This is how I got there.
+I am still comparing a **48-port switch, a compact 24-port switch, and arrangements with multiple smaller switches**. The cabinet might be conventional, vertical, or partly custom-built. I have not settled where it will go. Nothing has been installed yet, and I want to understand the trade-offs before choosing.
 
 ## The Service Room Was Already Getting Crowded
 
@@ -31,11 +31,11 @@ The original candidate was a service/storage room measuring about **3.75 × 1.35
 
 My concern was the combination. Water systems need maintenance, and I do not want network equipment beside plumbing, possible leaks or condensation. The electrical and solar equipment also need their own working clearances and ventilation.
 
-Our contractor, Ruaya, suggested moving some water equipment to the side of the house. We are investigating separate underground storage for domestic fresh water and the planned **2,000-litre rainwater tank**, with pumps and the softener in an accessible protected service area. The rainwater is intended for irrigation and other permitted non-potable uses.
+Our contractor, Ruaya, suggested moving some water equipment to the side of the house. One option is to put the domestic freshwater tank underground, beside the house rather than beneath the building. We are also investigating underground placement for the required **2,000-litre rainwater tank**, kept separate from domestic water. The rainwater is intended for irrigation and other permitted non-potable uses. The pumps, pressure tank and water softener would still need an accessible, protected service area.
 
-This is still a proposal. Tanks beside the house need engineering checks for excavation near the foundations, groundwater, waterproofing, drainage and maintenance access. Moving a problem outside does not automatically make it safe.
+None of this is approved yet. Underground tanks beside the house need engineering checks for excavation near the foundations, groundwater uplift, waterproofing, contamination prevention, drainage and maintenance access. Moving a problem outside does not automatically make it safe.
 
-If that arrangement works, the existing service room can mainly serve the electrical and solar systems, and the network can go in a **separate dry location**, potentially around the foyer or stairs. I still need the architect to approve the exact position.
+If that arrangement works, the existing service room might have more room for electrical and solar systems, subject to their required separation and working clearances. I could place the network cabinet there if the conditions are suitable, or in a **separate dry location**, potentially around the foyer or stairs. The architect and relevant engineers still need to review both possibilities.
 
 ## My First Idea Was a 48-Port Switch
 
@@ -43,13 +43,13 @@ I originally looked at a full-size managed Gigabit switch. A 48-port model sound
 
 One candidate was the **[TP-Link Omada SG3452](https://www.tp-link.com/us/business-networking/omada-switch-access/sg3452/)**. TP-Link lists **48 Gigabit Ethernet ports, four SFP slots, fanless cooling and a 440 × 220 × 44 mm chassis**. It is a proper rack-width switch, although it does not supply PoE to cameras or access points.
 
-I also investigated the **[Zyxel GS1900-48](https://store.zyxel.com/gs1900-48-eu0102f.html)**. I had seen an Amazon listing for **AED 1,552 plus AED 99 delivery** at the time of my research. The marketplace dimensions looked suspiciously small. [Zyxel's rack-mount guide](https://mysupport.zyxel.com/hc/en-us/articles/34308391717778-Zyxel-Rack-Mount-Guide-19-Installation-Support-for-Switches-and-H-Series-Firewalls) instead lists **440 × 200 × 44 mm**. Zyxel describes this model as using a smart fan, so noise was another consideration.
+I also investigated the **[Zyxel GS1900-48](https://store.zyxel.com/gs1900-48-eu0102f.html)**. An overseas Amazon listing I noted translates to approximately **₱26,900 for the switch plus ₱1,700 delivery**, or **₱28,600 total**, at the [3 November 2026 exchange rate of about ₱17.31 per dirham](https://www.investing.com/currencies/aed-php-historical-data). This is only a currency conversion of that listing, **not a Philippine supplier quote or a price I have paid**. The marketplace dimensions looked suspiciously small. [Zyxel's rack-mount guide](https://mysupport.zyxel.com/hc/en-us/articles/34308391717778-Zyxel-Rack-Mount-Guide-19-Installation-Support-for-Switches-and-H-Series-Firewalls) instead lists **440 × 200 × 44 mm**. Zyxel describes this model as using a smart fan, so noise was another consideration.
 
 The problem was not only the purchase price. With a cabinet I wanted to keep as shallow as possible, a **20–22 cm-deep switch leaves very little space** for the Ethernet plugs, power cable and cable bends. I also would still need something to power the PoE devices.
 
 Before deciding on the cabinet, I went back to the house plan and counted the connections.
 
-## Counting the CAT6 Runs Changed the Design
+## Counting the CAT6 Runs Changed My Assumptions
 
 These are the current allowances, not an as-built cable schedule:
 
@@ -75,43 +75,45 @@ Each cable can terminate in a passive CAT6 patch panel. The patch panel is simpl
 
 I am considering **28–32 termination positions** in total so we can add some cable runs later. That does not mean buying a 32-port switch today. In fact, because extra cable is easier to install while a house is open, I would rather decide the spare cable locations now, not after plastering.
 
-A 24-port switch suddenly became much more interesting.
+That count made me look at smaller switches more seriously, without excluding a 48-port model if it turns out to be easier to accommodate or better for future expansion.
 
-## Why I Prefer a 24-Port Switch Plus a Small PoE Switch
+## Comparing One Big Switch with Several Smaller Ones
 
-PoE stands for **Power over Ethernet**. It lets compatible cameras and Wi-Fi access points receive power through their network cable, without a separate power adapter at each device.
+I do not have a final switch configuration. The 48-port idea is still on the table, especially if we decide to activate more outlets in the future. A 24-port switch would be smaller, but combining smaller switches can also complicate the cabling and maintenance.
 
-My current powered-device allowance is **two cameras plus three or four access points**, so around **five or six PoE connections**. I do not see a reason to buy 24 or 48 powered switch ports for that.
+PoE means **Power over Ethernet**. It lets compatible cameras and Wi-Fi access points receive power over their network cable. At present I am allowing for **two PoE cameras and four Wi-Fi access points**, though the Wi-Fi count may decrease after checking coverage. That is up to **six powered connections**, assuming all four access points use PoE.
 
-The layout I am investigating is:
+These are the arrangements I am comparing:
 
-```text
-Internet / fibre ONT
-        |
-   Router / firewall
-        |
-24-port managed Gigabit switch
-        |-- Ordinary CAT6 room outlets
-        |-- Home Assistant / other local devices
-        |
-        +-- 8-port PoE switch
-                   |-- 2 PoE cameras
-                   +-- 3 or 4 Wi-Fi access points
-```
+| Arrangement | Advantages for this house | Disadvantages or questions |
+|---|---|---|
+| One 48-port managed switch, with PoE supplied separately if necessary | Plenty of spare ports; straightforward central management; easier to activate extra wall outlets | Larger chassis and cabinet clearance; many ports may sit unused; a non-PoE model still needs injectors or a PoE switch |
+| One 24-port managed switch plus an 8-port PoE switch | Can use a shallow, fanless main switch; buy PoE capacity only where needed; replace or expand the powered switch independently | Two power connections, an inter-switch uplink, extra cables and configuration; PoE port and wattage limits need checking |
+| Two 16-port switches, with suitable PoE capacity | Potentially flexible placement and a wider choice of compact units; expansion can happen in smaller steps | Each extra switch needs power and management; uplink ports reduce usable capacity; traffic between switches shares the uplink |
+| One 24-port managed PoE switch | Fewer devices, one central switch and no separate inter-switch link | May cost more and produce more heat or fan noise; 24 ports could become tight when router, outlets and future devices are included |
+| One larger managed PoE switch | Simpler cabling if one unit can power everything; more room for expansion | Larger PoE power supply and enclosure requirements; cost, noise and idle power depend on the specific model |
 
-All fixed house cables would terminate on central patch panels. The diagram shows the logical connections, not final physical rack positions.
+There is no winner yet. A single larger switch has the advantage of simplicity. Multiple smaller ones can be more compact and make selective upgrades easier, but they mean more devices to power and troubleshoot. I would also need to check that managed switches work together with the VLANs I want.
 
-A small detail matters when counting switch capacity: **the link between the switches uses a port on each switch**. If the 8-port PoE model has eight shared data/PoE ports and no separate uplink port, six powered devices plus one uplink use seven ports. That leaves only one spare. It is enough for the initial idea, but hardly unlimited expansion.
+**One possible arrangement** is a 24-port non-PoE switch connected to an 8-port PoE switch:
 
-There is also a difference between having enough PoE *ports* and having enough PoE *power*. I will need to add the wattage of the selected cameras and access points, check their PoE standards, and choose a switch with a suitable total power budget. I cannot finalize that until the access-point models are chosen.
+![Illustrated home network with fibre ONT, router, managed 24-port switch, Ethernet outlets, Home Assistant devices, 8-port PoE switch, two cameras and four Wi-Fi access points](home-network-layout.webp)
 
-Two switches mean an extra power connection and another device to manage. A single 24-port PoE switch might eventually turn out to be simpler if a suitable shallow, quiet model is available at a good price. I am not ruling that out.
+*This is an illustration of one option, not the selected equipment or final installation. Some smart-home devices shown may connect wirelessly through Home Assistant rather than directly by Ethernet.*
 
-For now, separating ordinary Ethernet and PoE looks like a reasonable compromise. It also lets me upgrade the PoE switch later without replacing the main switch.
+With the present **22 CAT6 runs**, six are allowed for the two cameras and four access points. That leaves **16 ordinary wired outlets**. In the two-switch arrangement, the 24-port switch would serve those outlets, the router, the PoE-switch uplink and any central devices such as Home Assistant. Some outlets can remain disconnected at the patch panel until needed.
+
+The 8-port PoE switch is close to full if six devices use PoE and another Ethernet port is needed for its uplink. On a model with eight shared ports and no dedicated uplink, that is **seven of eight ports used**. More cameras or access points might push me towards 16 PoE ports or a different switch combination.
+
+Port count is only half the PoE question. I also need the actual power consumption of the camera and access-point models, their PoE standards and the switch's total power budget. I cannot confirm an 8-port model until those are selected.
+
+An ordinary Gigabit uplink between switches should be reasonable for the initial household traffic, but it can become a shared bottleneck if I add heavy local recording, network storage or faster devices. A switch with faster uplink ports may be worth comparing. I also need to account for whether the switch supports VLANs properly.
+
+All the house CAT6 cables would still terminate at passive patch panels. Whether I buy one switch or several, I want the permanent cabling to be flexible. Buying spare cable runs now is different from powering dozens of empty switch ports every day.
 
 ## The Compact Switches I Started Comparing
 
-Once I stopped insisting on 48 ports, I found several much shallower models.
+As another option alongside the 48-port models, I found several much shallower 24-port switches.
 
 | Switch | Chassis (W × D × H) | What interests me |
 |---|---|---|
@@ -126,7 +128,7 @@ I prefer a fanless switch if the cabinet ends up near occupied rooms. I also wan
 
 With **Home Assistant**, smart-home devices, guests and cameras, I would like to separate parts of the network using **VLANs**. A VLAN is a way to keep groups of devices on different logical networks even when they share physical switches. The switches, access points and router/firewall all need to support the intended setup. VLANs alone are not a firewall; the router rules still control which networks can talk to each other.
 
-The ES224G and GS1900-24E are the candidates I want to compare more closely. Their management features are not identical, so I still need to check the exact VLAN and uplink behaviour rather than assume every switch advertised as "managed" works the same way.
+The ES224G and GS1900-24E are interesting compact candidates, but I am still comparing them with bigger switches and multi-switch layouts. Their management features are not identical, so I need to check the exact VLAN and uplink behaviour rather than assume every switch advertised as "managed" works the same way.
 
 ## Is a 25 cm-Deep Cabinet Actually Possible?
 
@@ -138,7 +140,23 @@ I still need space for Ethernet plugs at the front, cable bends, the power conne
 
 A cabinet advertised as 250 mm deep may have considerably less usable internal space. I will need to draw the actual hardware to scale, including the patch leads, before deciding whether **25 cm** works. A **30 cm** option would be easier, but it would also project further into the room.
 
-I briefly looked at vertical wall-mounted racks, where equipment is oriented differently so its long chassis dimension can run along the wall. It can solve the projection problem, but only if the manufacturer's mounting and cooling instructions allow that orientation. With a shallow 24-port switch, I may not need to get that complicated.
+Another idea is to mount the network equipment vertically rather than in the normal horizontal orientation. I am keeping both options open.
+
+## A Vertical Wall Rack Is Another Option
+
+In a standard wall cabinet, the chassis depth projects out from the wall. In a **vertical wall-mount rack**, the equipment can be oriented so more of its depth runs along the wall. That could be interesting for the 48-port models, whose chassis alone is around 20–22 cm deep.
+
+The [StarTech RK419WALLV 4U vertical bracket](https://www.startech.com/en-us/server-management/rk419wallv) is a commercial example for 19-inch equipment. I have not selected that model; I am using it to understand the mounting idea.
+
+| Layout | What I like | What worries me |
+|---|---|---|
+| Normal horizontal shallow cabinet | Familiar rack layout; front ports are easy to see; easier to combine patch panels and small devices | The cabinet door, power plugs and Ethernet cable bends add to the wall projection; a deep switch may not fit a 25 cm target |
+| Vertical wall-mounted 19-inch equipment | Can reduce projection for some deeper switches; useful where wall width or height is available | Port and cable access may be awkward; power cords and patch leads must be routed carefully; cooling, manufacturer-approved orientation and load-bearing mounts must be checked |
+| Custom open or partially enclosed frame | Dimensions could follow the actual equipment rather than standard cabinet sizes | Needs careful design for dust, physical protection, cable strain relief, ventilation and safe wall fixing |
+
+My preference is still to avoid a large box projecting into a narrow room, but I cannot judge these layouts from the rack dimensions alone. I need to draw the equipment, cable routes, service access and door clearance. A vertical rack may allow the 48-port switch to remain practical, while a shallow 24-port switch may work more easily in a conventional cabinet.
+
+The mounting wall matters too. With AAC panels planned in parts of the house, I need engineer-approved anchors, preferably into the reinforced-concrete structure where practical. I am not treating a printed bracket or a normal wall plug as a structural solution for a loaded rack.
 
 ## I Also Want to See Whether I Can 3D Print Part of It
 
@@ -150,19 +168,19 @@ There are some interesting modular references on MakerWorld:
 - [KWS Rack V2, Heavy-Duty 10-inch Homelab Rack](https://makerworld.com/en/models/2139130-kws-rack-v-2-heavy-duty-10-inch-homelab-rack#profileId-2317125), useful for smaller equipment.
 - [Modular 19-inch Server Rack](https://makerworld.com/en/models/1503491-modular-19-server-rack) and [OpenRack 1U](https://makerworld.com/en/models/1032069-openrack-1u-a-modular-server-rack-system), other designs I want to study.
 
-The first one is closest to what I have in mind. I am considering a **2020 aluminium-extrusion frame, metal equipment rails and wall anchors, with PETG-printed cable guides, covers and adapters**. I have not printed or load-tested any of these rack designs yet, and I still need to check which individual pieces fit the A1 Mini.
+One possible construction is a **2020 aluminium-extrusion frame, metal equipment rails and wall anchors, with PETG-printed cable guides, covers and adapters**. A commercial metal rack with custom printed accessories could be simpler and safer. I have not printed or load-tested any of these rack designs yet, and I still need to check which individual pieces fit the A1 Mini.
 
 A 10-inch rack is attractive because it is compact, but it does not directly accept standard 19-inch rack-mounted equipment. Even a 294 mm-wide desktop switch would need a suitable shelf or custom mount. I would rather select the switch first and build around it than choose a printable rack and then discover it rules out the equipment I wanted.
 
 I also would not trust ordinary printed PETG as the main load-bearing or fire-protective structure. Metal should carry the equipment and secure the frame to the wall. We are moving towards AAC wall panels in parts of the house, so any significant wall load needs an engineer-approved fixing detail, preferably into the reinforced-concrete structure where practical.
 
-## The Cabinet Needs More Than Two Switches
+## Whatever Cabinet I Use, There Is More Than the Switch
 
-Even with the switch question mostly answered, I have not settled the cabinet size. The full list may include:
+The switch configuration and cabinet size are still open. Whichever arrangement I use, the space may also need:
 
 - CAT6 patch panels and cable management
 - Router/firewall and the internet provider's fibre ONT
-- 24-port switch and the small PoE switch
+- The selected main switch, plus a PoE switch or injectors if required
 - Home Assistant mini PC or other controller
 - Possibly an NVR for camera recording
 - Power distribution and, ideally, backup power
@@ -171,12 +189,15 @@ A UPS may be better in its own ventilated location instead of inside a very shal
 
 The whole system needs to be accessible. A tidy cabinet that is impossible to service is not a good design.
 
-## Where I Am Now
+## Where the Design Stands
 
-The **48-port switch is off my initial shopping list**. The plan is roughly **22 CAT6 runs**, with provision for **28–32 passive terminations**, a **24-port managed Gigabit switch**, and a separate **8-port PoE switch** if the final power budget supports it.
+I am **still considering 24-port, 48-port and multiple-switch layouts**. A larger switch may be easier to manage and expand. Several smaller switches could fit a tighter space or let me separate the PoE budget. Until I choose the actual hardware and calculate the PoE load, I cannot say which is better for this house.
 
-I want a cabinet around **25 cm deep**, probably using metal or aluminium structure with some 3D-printed accessories. That depth is a target, not an approved construction dimension.
+The working estimate remains **22 CAT6 runs**, with possible provision for **28–32 passive terminations**. Those numbers still need checking against the final electrical and architectural drawings. A passive patch panel lets me keep unused cables ready without connecting them to live switch ports.
 
-The next work is less exciting than choosing hardware, but more important: finalize the outlet and access-point locations with the architect, select the actual switch and router models, calculate the PoE budget, and check a scaled cabinet layout with real cable clearances. The cabinet location and wall anchors also need approval.
+For the cabinet, I am comparing a conventional shallow enclosure around **25 cm deep**, a somewhat deeper cabinet, and a **vertical wall-mounted rack**. A custom frame with some printed parts is also possible. The exact projection, dimensions, ventilation, cable access and structural fixing have not been approved.
 
-I am glad I counted the connections before buying a 48-port switch. I still want enough cables inside the walls for future changes. I just do not need to power every possible connection on day one.
+The location is open too. Moving the domestic freshwater storage and possibly the separate rainwater tank underground beside the house could free some space in the service room. But it introduces its own excavation, water-protection and maintenance questions. Even if that proposal is approved, I might still prefer a dedicated dry network location near the foyer or stairs.
+
+My next step is to put the candidate switches and racks into a scaled drawing, include real Ethernet and power cable clearances, and review the location together with the architect. Then I can compare actual quotes **in Philippine pesos** and decide what to order. I would rather make that decision once I know what fits and how we will maintain it.
+
